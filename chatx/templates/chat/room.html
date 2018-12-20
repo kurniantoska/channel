@@ -8,10 +8,16 @@
 {% block script %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/reconnecting-websocket/1.0.0/reconnecting-websocket.min.js"></script>
 <script>
+    let loc = window.location;
+    let wsStart = 'ws://';
+    if (loc.protocol === 'https:'){
+        wsStart = 'wss://'
+    }
+
     let roomName = {{ room_name_json }};
 
     let chatSocket = new ReconnectingWebSocket(
-        'ws://' + window.location.host +
+        wsStart + loc.host +
         '/ws/chat/' + roomName + '/');
 
     chatSocket.onmessage = function(e) {
