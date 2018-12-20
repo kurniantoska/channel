@@ -1,12 +1,33 @@
 {% extends 'base.html' %}
 {% block content %}
-    <textarea id="chat-log" cols="100" rows="20"></textarea><br/>
+    <textarea id="chat-log" cols="100" rows="10"></textarea><br/>
     <input id="chat-message-input" type="text" size="100"/><br/>
     <input id="chat-message-submit" type="button" value="Send"/>
 {% endblock %}
 
 {% block script %}
+<script type="text/javascript">
+
+function addContent(index) {
+    let textarea = document.getElementById("chat-log");
+    if(textarea.selectionStart == textarea.selectionEnd) {
+     textarea.scrollTop = textarea.scrollHeight;
+  }
+}
+
+var index = 0;
+
+var interval = setInterval(function() {
+  addContent(index++);
+  if (index > 1000) {
+    clearInterval(interval);
+  }
+}, 1000)
+
+</script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/reconnecting-websocket/1.0.0/reconnecting-websocket.min.js"></script>
+
 <script>
     let loc = window.location;
     let wsStart = 'ws://';
