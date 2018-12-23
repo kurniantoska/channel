@@ -52,7 +52,9 @@ class Thread(models.Model):
 
     @property
     def room_group_name(self):
-        return f'chat_{self.id}'
+        ret_text = 'chat_{}'.format(self.id)
+        # return f'chat_{self.id}'
+        return ret_text
 
     def broadcast(self, msg=None):
         if msg is not None:

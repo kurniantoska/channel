@@ -16,7 +16,8 @@ class ChatConsumer(AsyncConsumer):
         # print(other_user, me)
         thread_obj = await self.get_thread(me, other_user)
         self.thread_obj = thread_obj
-        chat_room = f"thread_{thread_obj.id}"
+        chat_room = "thread_{}".format(thread_obj.id)
+        #chat_room = f"thread_{thread_obj.id}"
         self.chat_room = chat_room
 
         await self.channel_layer.group_add(

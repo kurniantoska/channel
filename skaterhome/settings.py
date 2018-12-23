@@ -25,7 +25,7 @@ SECRET_KEY = '(8)-!%w6o81s_raqhc%0b1glee-$ljqf9$9l#*==+v9g(q6_l5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['scrapska-skaterska.c9users.io', ]
+ALLOWED_HOSTS = ['scrapska-skaterska.c9users.io', '192.168.99.100', '192.168.8.104']
 
 
 # Application definition
