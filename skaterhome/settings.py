@@ -23,9 +23,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '(8)-!%w6o81s_raqhc%0b1glee-$ljqf9$9l#*==+v9g(q6_l5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['scrapska-skaterska.c9users.io', '192.168.99.100', '192.168.8.104']
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'scrapska-skaterska.c9users.io',
+    '192.168.99.100',
+    '192.168.8.104'
+]
 
 
 # Application definition
@@ -125,6 +130,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "static", "media")
+STATIC_ROOT = os.path.join(BASE_DIR, "static", "static-only")
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static", "static")]
 
 CHANNEL_LAYERS = {
     "default": {

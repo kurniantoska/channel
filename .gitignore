@@ -105,3 +105,6 @@ venv.bak/
 
 # pycharm IDE setting ignore
 .idea
+
+# static files
+static/
