@@ -28,7 +28,7 @@ if (loc.protocol === 'https:'){
     wsStart = 'wss://'
 }
 
-let endpoint  = wsStart + loc.host + loc.pathname;
+let endpoint  = wsStart + loc.host + "/ws" + loc.pathname;
 
 let socket = new ReconnectingWebSocket(endpoint);
 

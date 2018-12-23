@@ -13,7 +13,7 @@ application = ProtocolTypeRouter({
             URLRouter(
                 chatx_url_routing +
                 [
-                    url(r"^messages/(?P<username>[\w.@+-]+)/$", ChatConsumer),
+                    url(r"^ws/messages/(?P<username>[\w.@+-]+)/$", ChatConsumer),
 
                 ],
             )
